@@ -1,0 +1,11 @@
+body{
+    font-family: Monospace;
+    font-size: large;
+    text-align: center;
+}
+header{
+    background-color: cyan;
+    height: 50px;
+    width: auto;
+    padding: 0px;
+}
