@@ -1,20 +1,17 @@
 console.log('hello');
 alert('Welcome to the dice game');
 
-
 document.addEventListener("DOMContentLoaded", function () {
-
 
     const form = document.getElementById('myForm');
     const nameInput = document.getElementById('name');
     const gameSection = document.getElementById('game');
     const rollButton = document.getElementById('rollButton');
     const freezeButton = document.getElementById('freezeButton');
+    const restartButton = document.getElementById('restartButton');
     const resultDiv = document.getElementById('result');
     const pointsDiv = document.getElementById('points');
     const paragraphs = document.querySelectorAll('p');
-
-   
 
     let diceRolls = [];
     let totalSum = 0;
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
             paragraphs.style.display = 'none';
 
         });
-
 
         startGame(playerName);
     });
@@ -99,6 +95,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         console.log(playerName);
+    });
+
+    restartButton.addEventListener('click', function () {
+        diceRolls = [];
+        totalSum = 0;
+        playerName = "";
+        counter = 0;
+        nameInput.value = "";
+
+        gameSection.style.display = 'none';
+        form.style.display = 'block';
+        resultDiv.style.display = 'none';
+        pointsDiv.style.display = 'none';
+
+        paragraphs.forEach(function(paragraphs) {
+            paragraphs.style.display = 'block';
+        });
+
+        resultDiv.innerText = '';
+        pointsDiv.innerText = '';
+
     });
 
 });
